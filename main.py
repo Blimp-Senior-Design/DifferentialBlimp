@@ -65,7 +65,7 @@ try:
         # print(l_x)
 
         x = (l2) + (r2)
-        y = ( l_x)
+        y = (l_x)
 
         error = 0
         if not (l_x > -0.2 and l_x < 0.2):
