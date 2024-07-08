@@ -11,7 +11,7 @@ def map_value(value, fromLow, fromHigh, toLow, toHigh):
     return ((value - fromLow) / (fromHigh - fromLow) * (toHigh - toLow) +
                      toLow)
 
-env = Blimp(render_mode="human")
+env = Blimp(render_mode="blimp")
 
 state, info = env.reset()
 
@@ -54,7 +54,7 @@ try:
         r2 = map_value(joy_cntrl.get_axis(5),-1,1,0,-1)
         # print(r2)
         r_x = round(joy_cntrl.get_axis(2),1)
-        r_y = round(joy_cntrl.get_axis(3),1)
+        r_y = map_value(round(joy_cntrl.get_axis(3),1), -1,1,0,4)
     #                ud_right = map_value(r_y, -100, 100, 400, 2500)
     #                ud_left = map_value(r_y, -100, 100, 2500, 400)
         cross = joy_cntrl.get_button(0)

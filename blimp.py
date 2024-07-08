@@ -95,12 +95,14 @@ class Blimp():
         if self.render_mode == "human":
             self.renderer.update_scene(self.d)
             pixels = self.renderer.render()
+            pixels = cv2.cvtColor(pixels, cv2.COLOR_BGR2RGB) 
             cv2.imshow("blimp",pixels)
             cv2.waitKey(10)
 
         if self.render_mode == "blimp":
             self.renderer.update_scene(self.d, camera="blimpCamera")
             pixels = self.renderer.render()
+            pixels = cv2.cvtColor(pixels, cv2.COLOR_BGR2RGB) 
             cv2.imshow("blimp",pixels)
             cv2.waitKey(10)
         # truncation=False as the time limit is handled by the `TimeLimit` wrapper added during `make`
